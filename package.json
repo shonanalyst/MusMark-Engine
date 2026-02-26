@@ -1,0 +1,30 @@
+{
+  "name": "musmark-engine",
+  "version": "1.0.0",
+  "description": "Audio watermarking engine — sign audio files and detect who leaked them",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "type": "commonjs",
+  "scripts": {
+    "build": "tsc",
+    "build:native": "node-gyp rebuild --directory native",
+    "build:all": "npm run build:native && npm run build",
+    "prepublishOnly": "npm run build:all"
+  },
+  "files": [
+    "dist",
+    "native/src",
+    "native/binding.gyp"
+  ],
+  "keywords": ["audio", "watermark", "fingerprint", "drm", "leak-detection"],
+  "license": "MIT",
+  "dependencies": {
+    "node-addon-api": "^7.1.0",
+    "uuid": "^9.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.30",
+    "@types/uuid": "^10.0.0",
+    "typescript": "^5.5.4"
+  }
+}

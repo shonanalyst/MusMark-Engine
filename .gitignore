@@ -1,0 +1,6 @@
+node_modules/
+dist/
+native/build/
+*.node
+*.tsbuildinfo
+.env
